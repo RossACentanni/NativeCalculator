@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NativeCalculator</string>
+    <string name="ETtext">Enter a number.</string>
+    <string name="add">ADD</string>
+    <string name="subtract">SUBTRACT</string>
+    <string name="solution_will_appear_here">Solution will appear here.</string>
+</resources>

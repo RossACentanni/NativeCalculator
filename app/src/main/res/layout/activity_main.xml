@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity.MainActivity">
+
+    <EditText
+        android:id="@+id/ETOperand1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ETtext" />
+
+    <EditText
+        android:id="@+id/ETOperand2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ETtext" />
+
+    <Button
+        android:id="@+id/BTNAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add" />
+
+    <Button
+        android:id="@+id/BTNSubtract"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subtract" />
+
+    <TextView
+        android:id="@+id/TVSolution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/solution_will_appear_here" />
+
+</LinearLayout>
