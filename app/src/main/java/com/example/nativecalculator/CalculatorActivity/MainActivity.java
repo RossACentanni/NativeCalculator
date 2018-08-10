@@ -6,15 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nativecalculator.R;
 
-public class MainActivity extends AppCompatActivity implements CalculatorContract.View {
-
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
-    }
+public class MainActivity extends AppCompatActivity implements CalculatorContract.View, View.OnClickListener {
 
     private EditText ETOperand1;
     private EditText ETOperand2;
@@ -30,7 +26,11 @@ public class MainActivity extends AppCompatActivity implements CalculatorContrac
         setContentView(R.layout.activity_main);
         initViews();
 
+        // Used to load the 'native-lib' library on application startup.
+
         listener = new MainActivityPresenter(new Calculator(), this);
+
+
     }
 
     private void initViews(){
@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements CalculatorContrac
         BTNAdd = findViewById(R.id.BTNAdd);
         BTNSub = findViewById(R.id.BTNSubtract);
         TVSolution = findViewById(R.id.TVSolution);
+
+        BTNAdd.setOnClickListener(this);
+        BTNSub.setOnClickListener(this);
     }
 
     public void onClick(View v){

@@ -10,13 +10,13 @@
         android:id="@+id/ETOperand1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ETtext" />
+        android:hint="@string/ETtext" />
 
     <EditText
         android:id="@+id/ETOperand2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ETtext" />
+        android:hint="@string/ETtext" />
 
     <Button
         android:id="@+id/BTNAdd"

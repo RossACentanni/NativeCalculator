@@ -17,7 +17,7 @@ public class MainActivityPresenter implements CalculatorContract.UserActionsList
     public void add(int opr1, int opr2) {
         calc.setOpr1(opr1);
         calc.setOpr2(opr2);
-        int solution = calc.add;
+        int solution = calc.add();
         mainActivityView.updateSolution(solution);
     }
 
@@ -25,7 +25,7 @@ public class MainActivityPresenter implements CalculatorContract.UserActionsList
     public void subtract(int opr1, int opr2) {
         calc.setOpr1(opr1);
         calc.setOpr2(opr2 * -1);
-        int solution = calc.add;
+        int solution = calc.add();
         mainActivityView.updateSolution(solution);
     }
 }
