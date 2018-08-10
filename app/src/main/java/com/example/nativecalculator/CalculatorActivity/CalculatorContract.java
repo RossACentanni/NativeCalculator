@@ -9,8 +9,8 @@ public interface CalculatorContract {
 
     interface UserActionsListener {
 
-        int add();
+        void add(int opr1, int opr2);
 
-        int subtract();
+        void subtract(int opr1, int opr2);
     }
 }

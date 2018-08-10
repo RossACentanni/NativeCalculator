@@ -16,17 +16,21 @@ public class MainActivity extends AppCompatActivity implements CalculatorContrac
         System.loadLibrary("native-lib");
     }
 
-    EditText ETOperand1;
-    EditText ETOperand2;
-    Button BTNAdd;
-    Button BTNSub;
-    TextView TVSolution;
+    private EditText ETOperand1;
+    private EditText ETOperand2;
+    private Button BTNAdd;
+    private Button BTNSub;
+    private TextView TVSolution;
+
+    private CalculatorContract.UserActionsListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+
+        listener = new MainActivityPresenter(new Calculator(), this);
     }
 
     private void initViews(){
@@ -40,10 +44,10 @@ public class MainActivity extends AppCompatActivity implements CalculatorContrac
     public void onClick(View v){
         switch (v.getId()){
             case R.id.BTNAdd:
-                add(Integer.parseInt(ETOperand1.getText().toString()), Integer.parseInt(ETOperand2.getText().toString()));
+                listener.add(Integer.parseInt(ETOperand1.getText().toString()), Integer.parseInt(ETOperand2.getText().toString()));
                 break;
             case R.id.BTNSubtract:
-                subtract(Integer.parseInt(ETOperand1.getText().toString()), Integer.parseInt(ETOperand2.getText().toString()));
+                listener.subtract(Integer.parseInt(ETOperand1.getText().toString()), Integer.parseInt(ETOperand2.getText().toString()));
                 break;
         }
     }
